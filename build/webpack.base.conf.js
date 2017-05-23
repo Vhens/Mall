@@ -19,7 +19,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json','scss','sass'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src')
@@ -36,12 +36,8 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
-      },
-      {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
-      },
-      {
+      }
+      ,{
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
@@ -57,6 +53,31 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
+      // {
+      //     test: /\.css$/,
+      //     loader: "css-loader?sourceMap!cssnext-loader"
+      // },
+      // // scss文件编译
+      // {
+      //     test: /\.scss$/,
+      //     loader: "css-loader?sourceMap!sass-loader!cssnext-loader"
+      // }
+      //       {
+      //   test: /\.vue$/,
+      //   loader: 'vue-loader',
+      //   options: {
+      //     loaders: {
+      //       'scss': 'style-loader!css-loader!sass-loader'
+      //     }
+      //   }
+      // },
+      // {
+      //   test: /\.(png|jpg|gif|svg|woff|woff2|ttf|eot)$/,
+      //   loader: 'file-loader',
+      //   options: {
+      //     name: '[name].[ext]?[hash]'
+      //   }
+      // },
     ]
   }
 }

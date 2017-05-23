@@ -30,8 +30,11 @@ footer, header, menu, nav, section {
     display: block;
 }
 
-body {
+body ,html{
+    width: 100%;
+    height:100%;
     line-height: 1;
+    background-color:#f2f2f2;
 }
 
 blockquote, q {
@@ -88,4 +91,73 @@ html, body {
 body {
     -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/**
+ *自定义字体左中右
+ */
+.tf{text-align: left !important;}
+.tc{text-align: center !important;}
+.tr{text-align: right !important;}
+.fb{font-weight: bold;}
+.vm{vertical-align: middle !important;}
+/* 浮动*/
+.fl{float: left;}
+.fr{float: right;}
+ /*display*/
+.dib{display: inline-block;}
+.db{display: block;}
+.dn{display: none;}
+/**
+ * 单行与多行溢出以...显示
+ */
+.line-1{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.line-2{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    line-clamp:2;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+.del{
+    text-decoration:line-through;
+}
+ /*分割线*/
+.hr{
+    display: block;
+    height: 1px;
+    border:0;
+    border-top:1px solid #ccc;
+    margin:1em 0;
+    padding:0;
+}
+/**
+ * 清除浮动
+ */
+.clr{
+    clear:both;
+    display:block;
+    font-size:0;
+    height:0;
+    line-height:0;
+    overflow:hidden;
+}
+.clearfix:before,
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.show{
+    display:block;
+}
+.hide{
+    display:none;
 }

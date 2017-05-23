@@ -1,0 +1,13 @@
+{
+    "user":[
+        {
+            "id":1,
+            "userName":"vhen",
+            "sex":"男"
+        },{
+            "id":2,
+            "userName":"wenwen",
+            "sex":"女"
+        }
+    ]
+}

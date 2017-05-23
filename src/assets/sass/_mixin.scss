@@ -1,3 +1,95 @@
 /**
  * 1像素边框
  */
+@mixin border-1px ($direction,$color){
+  position:relative;
+  &::before{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    content:'';
+    z-index:-1;
+    width:200%;
+    height:200%;
+    transform:scale(.5,.5);
+    transform-origin:0 0;
+    box-sizing:border-box;
+    @if  $direction=="border"{
+      border:1px solid $color;
+    }
+    @if $direction=="top"{
+      border-top:1px solid $color;
+    }
+    @if $direction=="right"{
+      border-right:1px solid $color;
+    }
+    @if $direction=="bottom"{
+      border-bottom:1px solid $color;
+    }
+    @media screen and(-webkit-min-device-pixel-radio:3){
+      transform:scale(.33333333,.33333333);
+    }
+    @media screen and(-webkit-min-device-pixel-radio:2){
+      transform:scale(.5555555,.5555555)
+    }
+  }
+}
+/**
+ * 圆角
+ */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+/**
+ * 阴影
+ */
+@mixin box-shadow($shadow...){
+-webkit-box-shadow: $shadow;
+   -moz-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+        box-shadow: $shadow;
+}
+/**
+ *变换
+ */
+@mixin transform($transform){
+    -webkit-transform: $transform;
+       -moz-transform: $transform;
+        -ms-transform: $transform;
+            transform: $transform;
+}
+/**
+ * 过渡
+ */
+@mixin transition($transition...){
+    -webkit-transition: $transition;
+       -moz-transition: $transition;
+        -ms-transition: $transition;
+            transition: $transition;
+}
+/**
+ * 动画
+ */
+@mixin animation($animation){
+     -webkit-animation: $animation;
+       -moz-animation: $animation;
+        -ms-animation: $animation;
+            animation: $animation;
+}
+/**
+*字体
+*/
+@mixin font-dpr($font-size) {
+    font-size: $font-size;
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
