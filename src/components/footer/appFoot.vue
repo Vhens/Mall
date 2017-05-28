@@ -3,7 +3,7 @@
       <footer>
           <ul>
              <li>
-                 <router-link to="/Home">
+                 <router-link to="/Home" exact>
                    <i class="icon iconfont icon-shouyeshouye"></i>
                    <p class="name"> 首页</p>
                  </router-link>
@@ -40,12 +40,19 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import '../../assets/sass/main.scss';
+  .router-link-active{
+    color:#FC605A;
+  }
   .foot{
       position:fixed;
       bottom:0;
       left:0;
+      right:0;
       z-index:3;
       width:100%;
+      min-width:320px;
+      max-width:640px;
+      margin:0 auto;
       background-color:#fff;
     ul{
         display:flex;

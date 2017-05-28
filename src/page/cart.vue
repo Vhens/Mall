@@ -5,7 +5,7 @@
              <span class="item">购物车</span>
              <span class="item"></span>
         </header>
-         <alert></alert>
+<!--          <toast></toast> -->
         <section class="content">
 
            <div class="list">
@@ -44,12 +44,12 @@
 
 <script>
 import checkA from '@/components/button/checkA'
-import alert from '@/components/dialog/alert'
+import toast from '@/components/dialog/toast'
 export default {
   name: 'cart',
   components:{
     checkA,
-    alert
+    toast
   }
 }
 </script>
@@ -85,23 +85,22 @@ export default {
         }
     }
     .list{
-        display:flex;
-        justify-content:flex-start;
-        margin-top:10px;
         padding:3%;
         background-color:#fff;
+        font-size:0;
         .item{
-            flex:1 100px;
-            width:100%;
+            display:inline-block;
             height:100%;
+            vertical-align:top;
 
             img{
-                width:px2rem(240);
+                width:px2rem(200);
                 height:px2rem(240);
                 vertical-align:middle;
+                overflow:hidden;
             }
             .name{
-                font-size:px2rem(36)
+                font-size:px2rem(32)
             }
             .color,.size{
                 margin-top:5px;
@@ -115,6 +114,12 @@ export default {
                 color:#fc605a;
             }
         }
+         .item:nth-of-type(1){
+            width:40%
+         }
+         .item:nth-of-type(2){
+            width:60%
+         }
         .item-box{
             display:flex;
             align-items:center;
@@ -153,9 +158,13 @@ export default {
     }
     .balance{
         position:fixed;
-        bottom:px2rem(160);
+        bottom:px2rem(162);
         left:0;
+        right:0;
         width:100%;
+        min-width:320px;
+        max-width:640px;
+        margin:0 auto;
     }
     .balance-box{
         display:flex;

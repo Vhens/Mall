@@ -4,7 +4,7 @@
     <div class="content">
         <transition name="slide-fade">
           <keep-alive>
-               <cirLoad  v-if="isLoad"></cirLoad>
+               <cirLoad  v-if="isLoad" ></cirLoad>
                <router-view></router-view>
           </keep-alive>
         </transition>
@@ -35,6 +35,11 @@ export default {
 
 <style lang="scss">
 @import '../assets/sass/main.scss';
+#app{
+    min-width:320px;
+    max-width:640px;
+    margin:0 auto;
+}
 .content{
   width:100%;
   height:100%;
