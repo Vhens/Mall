@@ -12,6 +12,7 @@ import Datum from '@/page/datum'
 import updateName from '@/page/updateName'
 import Integral from '@/page/integral'
 import Address from '@/page/address'
+import Order from '@/page/order'
 
 Vue.use(Router)
 
@@ -73,6 +74,11 @@ export default new Router({
       path: '/Address',
       name: 'Address',
       component: Address
+    },
+     {
+      path: '/Order',
+      name: 'Order',
+      component: Order
     }
   ]
 })

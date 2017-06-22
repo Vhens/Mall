@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-   <!--  <app-head></app-head> -->
     <div class="content">
         <transition name="slide-fade">
           <keep-alive>
@@ -9,25 +8,39 @@
           </keep-alive>
         </transition>
     </div>
-    <app-foot></app-foot>
+    <app-foot v-show="getFootState"></app-foot>
   </div>
 </template>
 
 <script>
-
-import appHead from '@/components/header/appHead'
 import appFoot from '@/components/footer/appFoot'
 import cirLoad from '@/components/loading/cirLoad'
+import { mapGetters } from 'Vuex';
 export default {
   name: 'app',
   components:{
-    appHead,
     appFoot,
     cirLoad
+  },
+  computed:{
+      ...mapGetters(
+          ['getFootState']
+        )
   },
   data(){
     return{
       isLoad:false
+    }
+  },
+  watch:{
+    $route(to){
+      let path=to.path.substring(1);
+      if(path=="order"||path=="Login"||path=="Register"||path=="Cart"){
+         this.$store.dispatch('hideFoot');
+      }
+      else{
+        this.$store.dispatch('showFoot')
+      }
     }
   }
 }

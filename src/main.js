@@ -14,6 +14,7 @@ import './assets/sass/main.scss'
 import './assets/js/rem.js'
 import './assets/css/reset.css'
 import './assets/font/iconfont.css'
+import './assets/swiper/css/swiper.min.css'
 
 
 Object.keys(filters).forEach(k=>Vue.filter(k,filters[k]))

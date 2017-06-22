@@ -7,7 +7,7 @@
         </header>
     <div class="classify-wrapper">
         <div class="menu-wrapper" ref="menuWrapper">
-            <ul
+            <ul>
                 <li class="menu-item" :class="{'current': currentIndex === index}" v-for="(item,index) in goods" :key="index" @click="selectMenu(index,$event)">
                     <span>{{item.name}}</span>
                 </li>

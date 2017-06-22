@@ -1,7 +1,7 @@
 <template>
   <div class="cart">
          <header class="cart-header">
-             <span class="item icon iconfont icon-jiantou"></span>
+             <span class="item icon iconfont icon-jiantou" @click="back"></span>
              <span class="item">购物车</span>
              <span class="item"></span>
         </header>
@@ -50,6 +50,11 @@ export default {
   components:{
     checkA,
     toast
+  },
+  methods:{
+    back(){
+        return this.$router.go(-1)
+    }
   }
 }
 </script>
@@ -158,7 +163,7 @@ export default {
     }
     .balance{
         position:fixed;
-        bottom:px2rem(162);
+        bottom:0;
         left:0;
         right:0;
         width:100%;

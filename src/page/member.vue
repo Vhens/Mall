@@ -23,25 +23,25 @@
           </p>
           <ul>
               <li>
-                  <router-link to="">
+                  <router-link to="/order">
                       <i class="icon iconfont icon-daifahuo"></i>
                       <p class="name">待发货</p>
                   </router-link>
               </li>
               <li>
-                  <router-link to="">
+                  <router-link to="/order">
                       <i class="icon iconfont icon-fukuan"></i>
                       <p class="name">待付款</p>
                   </router-link>
               </li>
               <li>
-                  <router-link to="">
+                  <router-link to="/order">
                       <i class="icon iconfont icon-daishouhuo"></i>
                       <p class="name">待收货</p>
                   </router-link>
               </li>
               <li>
-                  <router-link to="">
+                  <router-link to="/order">
                       <i class="icon iconfont icon-pingjia"></i>
                       <p class="name">待评论</p>
                   </router-link>

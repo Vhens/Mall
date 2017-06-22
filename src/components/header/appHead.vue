@@ -18,8 +18,11 @@ export default {
       position:fixed;
       top:0;
       left:0;
+      right:0;
       z-index:3;
       width:100%;
+      min-width:320px;
+      max-width:640px;
       height:px2rem(120);
       line-height:px2rem(120);
       background-color:#FC605A;
